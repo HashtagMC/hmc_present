@@ -1,5 +1,6 @@
 # hmc_present
 *hmc_present* provides a simple option to realise primitive presentations that consist of nothing but a single HTML-File. The advantages over conventional presentation software are obvious.
+
 **Advantages:**
 + no dedicated file format - every computer that has a modern web browser installed can run the HTML-based presentations
 + smallest possible disk space - since HTML files consist of nothing but text, they only take up a few Kilobyte (included pictures take up extra space), while dedicated presentation software often takes up Gigabytes of disk space
