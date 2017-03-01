@@ -1,0 +1,103 @@
+﻿<!doctype HTML>
+<html>
+<head>
+<title>Test Presentation</title>
+<meta charset="UTF-8">
+
+<style type="text/css">
+html {
+ background: #C0C0C0;
+}
+
+div#main {
+ background: rgb(255, 255, 255);
+ padding: 1em;
+ margin: 0 20%;
+ height: 100%;
+ border: 1px solid black;
+}
+
+#footnote {
+ position: fixed;
+ text-align: center;
+ font-size: 12px;
+ bottom: 2px;
+ border-top: 1px dashed black;
+ width: 100%;
+ padding: 1em 0;
+ margin: 0;
+}
+
+h1 {
+ text-align: center;
+ width: 60%;
+ margin: 1em 20%;
+ border-bottom: 1px solid black;
+}
+
+h2 {
+ border-bottom: 1px dotted black;
+}
+
+div.content {
+ display: none;
+}
+</style>
+
+</head>
+<body>
+<h1>Test Presentation</h1>
+
+<div id="footnote">
+hmc_present by HashtagMC &ndash; proudly made with HTML, CSS and Javascript<br/>
+Visit the <a href="https://github.com/HashtagMC/hmc_present" target="_blank">project homepage</a> for more information
+</div>
+
+<div id="main">
+
+<div id="projection">
+
+</div>
+
+<div id="content_0" class="content">
+<h2>Introduction</h2>
+Lorem ipsum, dolor sit amet.
+</div>
+
+<div id="content_1" class="content">
+<h2>Random content - pg. 1</h2>
+Random text is even more random when it is randomly randomed.
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+function content(i) {
+i = parseInt(i);
+var el = document.getElementById("content_" + i);
+return el;
+}
+
+var contents = document.getElementsByClassName("content");
+var projection = document.getElementById("projection");
+projection.innerHTML = content(0).innerHTML;
+
+var i = 0;
+max_i = contents.length -1;
+
+document.onkeydown = interceptArrowKeys;
+
+function interceptArrowKeys(event) {
+    if (event.keyCode == "37") {
+       if(i > 0) { i = i - 1; }
+       projection.innerHTML = content(i).innerHTML;
+    }
+    else if (event.keyCode == "39") {
+       if(i < max_i) { i = i + 1; }
+       projection.innerHTML = content(i).innerHTML;
+    }
+}
+</script defer>
+</body>
+</html>
